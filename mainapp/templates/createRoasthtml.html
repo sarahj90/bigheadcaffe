@@ -2,15 +2,13 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>createCoffee</title>
+        <title>Title</title>
     </head>
-
     <body>
-        <form class="" action="{% url 'editcoffee' coffee_id=coffee.id %}" method="POST">
+                <form class="" action="{% url 'createroast' %}" method="POST">
             {% csrf_token %}
             {{ form.as_p}}
-            <input type="submit" name="" value="Edit">
+            <input type="submit" name="" value="Create">
         </form>
-
     </body>
 </html>
