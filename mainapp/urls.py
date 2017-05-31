@@ -18,4 +18,9 @@ urlpatterns = [
 
     url(r'^createroast/', views.createRoast, name='createroast'),
     url(r'^editroast/(?P<roast_id>[0-9]+)/$', views.editRoast, name='editroast'),
+
+    url(r'^user_list/', views.user_list, name='user_list'),
+    url(r'^user_coffees/(?P<user_id>[0-9]+)/$', views.user_coffees, name='user_coffees'),
+
+
 ]

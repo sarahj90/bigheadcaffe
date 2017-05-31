@@ -223,3 +223,18 @@ def editSyrup(request, syrup_id):
 def deleteSyrup(request, syrup_id):
     syrup = Syrup.objects.get(id=syrup_id).delete()
     return redirect("index")
+
+def user_list(request):
+    context = {}
+    user_list= User.objects.all()
+    context['user_list'] = user_list
+    return render(request, 'user_list.html', context)
+
+def user_coffees(request, user_id):
+    context={}
+    user = User.objects.get(id=user_id)
+    context['user']=user
+    coffees= Coffee.objects.filter(user=user)
+    context['coffees'] = coffees
+    return render(request, 'user_coffees.html', context)
+
